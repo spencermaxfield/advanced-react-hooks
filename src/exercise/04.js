@@ -4,11 +4,10 @@
 import * as React from 'react'
 
 function MessagesDisplay({messages}) {
-  const containerRef = React.useRef()
-  // 🐨 replace useEffect with useLayoutEffect
-  React.useEffect(() => {
+  const containerRef = React.useRef();
+  React.useLayoutEffect(() => {
     containerRef.current.scrollTop = containerRef.current.scrollHeight
-  })
+  });
 
   return (
     <div ref={containerRef} role="log">
@@ -34,7 +33,7 @@ function SlooooowSibling() {
   React.useEffect(() => {
     // increase this number to see a more stark difference
     sleep(300)
-  })
+  });
   return null
 }
 
